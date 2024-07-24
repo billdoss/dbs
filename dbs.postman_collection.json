@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "f2b73bc6-dd76-4549-925e-a050941b837d",
+		"name": "dms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17235366",
+		"_collection_link": "https://gtbankdv.postman.co/workspace/My-Workspace~bf86adf5-45d7-45df-83d5-84b4385abe74/collection/17235366-f2b73bc6-dd76-4549-925e-a050941b837d?action=share&source=collection_link&creator=17235366"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "get accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/Account?PageNumber=2&PageSize=2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Account"
+							],
+							"query": [
+								{
+									"key": "PageNumber",
+									"value": "2"
+								},
+								{
+									"key": "PageSize",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branch_name\": \"stests\",\r\n    \"label\": \"sss\",\r\n    \"account_type\": \"Individus\",\r\n    \"status\": \"Actif\",\r\n    \"card_number\": \"2222222333222\",\r\n    \"address\": \"aaaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Account",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branch_name\": \"bill branch\",\r\n    \"label\": \"bill\",\r\n    \"account_type\": \"Individu\",\r\n    \"status\": \"Actif\",\r\n    \"card_number\": \"76976789699789\",\r\n    \"address\": \"bill\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Account/CIXXX0000000004830592317",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Account",
+								"CIXXX0000000004830592317"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branch_name\": \"bill branch\",\r\n    \"label\": \"bill\",\r\n    \"account_type\": \"Individu\",\r\n    \"status\": \"Actif\",\r\n    \"card_number\": \"76976789699789\",\r\n    \"address\": \"bill\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Account/CIXXX0000000004830592317",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Account",
+								"CIXXX0000000004830592317"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get account by acctNum",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/Account/0000000008344246968",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Account",
+								"0000000008344246968"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzIxODIyNjU0fQ.XkPGwsCK6V7YWovkWkGebTxJGUB9KrEBO9aZAsHaWFEkLCQduANS9RxRKJBPbp6OrJjfLMeTbnv-tMexZ-gxYg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "sign-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"admin\",\r\n  \"password\": \"admin\",\r\n  \"role\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/sign-in",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
